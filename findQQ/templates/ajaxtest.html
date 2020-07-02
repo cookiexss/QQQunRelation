@@ -1,0 +1,48 @@
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block coustom_js %}#}
+{#    {% load static %}#}
+{#    <script src="{% static 'js/jquery-3.5.0.min.js' %}" charset="utf8"></script>#}
+{#    <script>#}
+{#        $(document).ready(function (){var strv = setInterval(function() {#}
+{#                    $.ajax({#}
+{#                        url: '/ajaxTest/',#}
+{#                        type:'get',#}
+{#                        data:"userAcc="+'123',#}
+{#                        success:function(data) {#}
+{#                            document.getElementById('jindutiao1').style="width: "+data+"%";#}
+                            {#$("#testasd").html(data);#}
+                            {#var num = 0;#}
+                            {#// 调用计时函数#}
+                            {#var t = setTimeout(timedCount(num),1000);#}
+                            {#// 循环计时函数, 多次调用自身函数, num为被传递的参数#}
+                            {#function timedCount(num){#}
+                            {#    num++;#}
+                            {#    $("#testasd").html(num);#}
+                            {#    //document.getElementById('jindutiao').innerHTML="<div class=\"progress-bar progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: "+num+"%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>";#}
+                            {#    document.getElementById('jindutiao1').style="width: "+num+"%"#}
+                            {#    // 设置条件使e799bee5baa6e79fa5e98193e78988e69d8331333363373232停止计时#}
+                            {#    if (num<100) {#}
+                            {#        var t = setTimeout(function(){timedCount(num);},1000);#}
+                            {#    }#}
+                            {#}#}
+{#                            if (data == '99'){#}
+{#                                clearInterval(strv);#}
+{#                            }#}
+{#                        }#}
+{#                    });#}
+{#                },100)});#}
+{##}
+{##}
+{#    </script>#}
+{#{% endblock coustom_js %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#<h1 id="testasd">asd</h1>#}
+{#<div class="progress" id="jindutiao" >#}
+{#  <div class="progress-bar progress-bar-striped bg-danger" id="jindutiao1" role="progressbar" style="width: 10%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#</div>#}
+{##}
+{#{% endblock content %}#}
+{##}

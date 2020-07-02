@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item"><h1>查询的群号为：{{ qqNum }}</h1></li>
+    </ul>
+    <br>
+    <table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>id</th>
+        <th>QQNum</th>
+        <th>Nick</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Auth</th>
+        <th>QunNum</th>
+    </tr>
+    </thead>
+  <tbody>
+        {% for item in result %}
+    <tr>
+        {% for i in item %}
+            {% if forloop.counter0 == 1 %}
+                <td><a href="/find/?option=QQ&qqNum={{  i }}">{{  i }}</a></td>
+            {% else %}
+                <td>{{  i }}</td>
+            {% endif %}
+            {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{%endblock%}

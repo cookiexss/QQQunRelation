@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item"><h1>查询的QQ号为：{{ qqNum }}</h1></li>
+    </ul>
+    <br>
+    <table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>id</th>
+        <th>QQNum</th>
+        <th>Nick</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Auth</th>
+        <th>QunNum</th>
+    </tr>
+    </thead>
+  <tbody>
+        {% for item in result %}
+    <tr>
+        {% for i in item %}
+            {% if not forloop.last %}
+                <td>{{  i }}</td>
+            {% endif %}
+            {% if forloop.last %}
+                <td><a href="/find/?option=Qun&qqNum={{  i }}">{{  i }}</a></td>
+            {% endif %}
+            {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{%endblock%}
